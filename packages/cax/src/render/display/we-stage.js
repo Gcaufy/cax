@@ -8,6 +8,9 @@ class WeStage extends Group {
     super()
 
     const component = page.selectComponent('#' + id)
+    if (!component) {
+      throw 'Missing component "#' + id + '" or component id is not set.';
+    }
     component.setData({
       width,
       height
